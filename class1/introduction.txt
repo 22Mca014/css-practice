@@ -1,0 +1,2 @@
+In this class i have discuss about why we use padding ,margin and border . 
+also discuss about text alignment property .

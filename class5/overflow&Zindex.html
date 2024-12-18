@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overflow and Z-index</title>
+    <style>
+      /* Style for the paragraph */
+      p {
+        height: 250px;
+        width: 250px;
+        border: 2px solid black;
+        overflow: auto; /* Adds scrollbars if content overflows */
+        position: relative; /* Needed for absolute boxes to position relative to this */
+      }
+
+      /* Box 1 - White transparent box */
+      .one {
+        height: 100px;
+        width: 100px;
+        background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+        border: 2px solid red;
+        position: absolute; /* Positioned relative to the paragraph */
+        top: 50px;
+        left: 50px;
+        z-index: 1; /* Stacks below Box 2 but above the paragraph */
+      }
+
+      /* Box 2 - Yellow transparent box */
+      .two {
+        height: 80px;
+        width: 80px;
+        background-color: rgba(255, 255, 0, 0.5); /* Semi-transparent yellow */
+        position: absolute; /* Positioned relative to the paragraph */
+        top: 80px;
+        left: 80px;
+        z-index: 2; /* Stacks above Box 1 */
+        overflow: auto; /* Scrollable if content inside this box overflows */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Paragraph with overflowing content -->
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
+      eveniet quibusdam consequatur modi quos. Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit. Tempora eveniet quibusdam consequatur modi
+      quos.
+    </p>
+
+    <!-- Box 1 - Overlapping box with transparent background -->
+    <div class="one"></div>
+
+    <!-- Box 2 - Another overlapping box with transparent background -->
+    <div class="two"></div>
+  </body>
+</html>

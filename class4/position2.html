@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .box1{
+            height: fit-content;
+            width: fit-content;
+            background-color: #761e1e;
+            /* position:absolute; */
+            left: 100px;
+            top:100px
+
+        }
+        .box2{
+            height: fit-content;
+            width: fit-content;
+            background-color: #6de3a2;
+            position:relative;
+            left: 100px;
+            top:100px
+
+        }
+       
+        /* 
+        Relative Box:
+
+Moves down by 20px and right by 30px from its original position, while still taking up its original space in the flow.
+
+Absolute Box:
+
+Positioned relative to the .container because the container has position: relative. It moves 100px down and 50px right from the container's top-left corner. */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h3 style="background-color: azure;"> Relative Box:</h3>
+        <p>Moves down by 20px and right by 30px from its original position, while still taking up its original space in the flow.</p>
+    </div>
+    <div class="box2">
+        <h3 style="background-color: aquamarine;">Absolute Box:</h3>
+        <p>Positioned relative to the .container because the container has position: relative. It moves 100px down and 50px right from the container's top-left corner.</p>
+    </div>
+    <div  style="  position: sticky; /* Sticky positioning: relative until a specified scroll threshold */
+    background-color: lightpink;
+    width: 200px;
+    height: 100px;
+    border: 1px solid rgb(125, 93, 99);
+     top: 10px; 
+    padding: 10px;" class="box3">David</div>
+</body>
+</html>

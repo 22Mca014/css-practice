@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Position Example</title>
+  <style>
+    /* Static Position (Default): No special positioning applied */
+    .static-box {
+      background-color: lightblue;
+      width: 200px;
+      height: 100px;
+      border: 1px solid blue;
+    }
+
+    /* Relative Position: Moves the element relative to its original position */
+    .relative-box {
+      position: relative; /* Allows positioning relative to the element's normal flow */
+      background-color: lightgreen;
+      width: 200px;
+      height: 100px;
+      border: 1px solid green;
+      top: 20px; /* Shifts the element down by 20px */
+      left: 30px; /* Shifts the element to the right by 30px */
+    }
+
+    /* Absolute Position: Removes the element from the document flow and positions it relative to the nearest positioned ancestor */
+    .absolute-box {
+      position: absolute; /* Absolute positioning */
+      background-color: lightcoral;
+      width: 200px;
+      height: 100px;
+      border: 1px solid red;
+      top: 100px; /* Moves the element 100px down from the positioned ancestor */
+      left: 50px; /* Moves the element 50px right from the positioned ancestor */
+    }
+
+    /* Fixed Position: Positions the element relative to the viewport */
+    .fixed-box {
+      position: fixed; /* Fixed positioning stays the same regardless of scrolling */
+      background-color: lightgoldenrodyellow;
+      width: 200px;
+      height: 100px;
+      border: 1px solid gold;
+      top: 20px; /* Fixed 20px from the top of the viewport */
+      right: 20px; /* Fixed 20px from the right of the viewport */
+    }
+
+    /* Sticky Position: Acts as relative until a threshold is reached, then behaves as fixed */
+    .sticky-box {
+      position: sticky; /* Sticky positioning: relative until a specified scroll threshold */
+      background-color: lightpink;
+      width: 200px;
+      height: 100px;
+      border: 1px solid rgb(125, 93, 99);
+      /* top: 10px; */
+      padding: 10px; /* The element sticks to 10px from the top of the viewport when scrolling */
+    }
+
+    /* Container for absolute positioning demonstration */
+    .container {
+      position: relative; /* Makes this container the reference for absolute positioning */
+      border: 1px dashed black;
+      height: 400px;
+      padding: 20px;
+      margin: 50px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Position Example</h1>
+
+  <!-- Static Position Example -->
+  <h2>Static Position (Default)</h2>
+  <div class="static-box">
+    Static Box (default, no positioning applied)
+  </div>
+
+  <!-- Relative Position Example -->
+  <h2>Relative Position</h2>
+  <div class="relative-box">
+    Relative Box (moved relative to its original position)
+  </div>
+
+  <!-- Absolute Position Example -->
+  <h2>Absolute Position</h2>
+  <div class="container">
+    <!-- This box is positioned relative to its parent container -->
+    <div class="absolute-box">
+      Absolute Box (relative to container)
+    </div>
+    Container with relative positioning (provides reference for absolute child)
+  </div>
+
+  <!-- Fixed Position Example -->
+  <h2>Fixed Position</h2>
+  <div class="fixed-box">
+    Fixed Box (always in the same place relative to the viewport)
+  </div>
+
+  <!-- Sticky Position Example -->
+  <h2>Sticky Position</h2>
+  <div class="sticky-box">
+    Sticky Box (scroll down to see the effect)
+  </div>
+  <p>
+    Scroll down to see the sticky box stick to the top of the viewport when it reaches 10px from the top.
+  </p>
+
+  <!-- Extra space to demonstrate scrolling for sticky and fixed elements -->
+  <div style="height: 1000px;"></div> 
+</body>
+</html>
